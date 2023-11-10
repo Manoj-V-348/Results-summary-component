@@ -1,0 +1,213 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* OWN STYLES */
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+main {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "Marks"
+    "Summary";
+  height: 100vh;
+  width: 100vw;
+}
+.marks--container {
+  text-align: center;
+  grid-area: Marks;
+  flex-direction: column;
+  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  color: white;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.marks {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  background-image: linear-gradient(
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.marks--container,
+.marks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.marks--container .result {
+  font-size: 1rem;
+  color: white;
+  margin-top: 5px;
+}
+.marks--heading {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 3rem;
+  color: white;
+}
+.marks > p {
+  color: hsl(241, 100%, 89%);
+}
+.bold--text {
+  font-weight: 800;
+}
+.marks--container .bold--text {
+  font-size: 1.2rem;
+  color: white;
+}
+.marks--container > p {
+  font-size: 0.8rem;
+  color: hsl(241, 100%, 89%);
+  margin-bottom: 5px;
+}
+
+.summary--container {
+  padding: 20px;
+}
+.results--container {
+  display: flex;
+  grid-area: Summary;
+  padding: 15px;
+  font-size: 0.8rem;
+}
+.results--container > div {
+  display: flex;
+  margin-right: auto;
+  gap: 10px;
+}
+.button--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+}
+.reaction--container > div > p {
+  color: hsl(0, 100%, 67%);
+}
+.memory--container > div > p {
+  color: hsl(39, 100%, 56%);
+}
+.verbal--container > div > p {
+  color: hsl(166, 100%, 37%);
+}
+.visual--container > div > p {
+  color: hsl(234, 85%, 45%);
+}
+button {
+  width: 100%;
+  padding: 8px;
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  border-radius: 40px;
+  border: none;
+  transition: all 0.5s ease-in-out;
+}
+button:hover {
+  background-image: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  cursor: pointer;
+}
+.black--bold {
+  font-weight: 700;
+}
+
+@media (min-width: 481px) {
+  main {
+    grid-template-rows: 1fr;
+    grid-template-columns: 300px 300px;
+    grid-template-areas: "Marks Summary";
+    width: auto;
+    height: auto;
+  }
+  .marks--container {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+  .attribution {
+    font-size: 0.7rem;
+  }
+}
